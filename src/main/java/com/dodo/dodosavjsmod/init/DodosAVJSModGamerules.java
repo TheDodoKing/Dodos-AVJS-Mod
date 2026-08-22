@@ -7,14 +7,14 @@ public class DodosAVJSModGamerules {
             GameRules.register(
                     "dodosAVJSModExecutionerGuardFix",
                     GameRules.Category.PLAYER,
-                    GameRules.BooleanValue.create(true) // default value
+                    GameRules.BooleanValue.create(true)
             );
 
     public static final GameRules.Key<GameRules.BooleanValue> ISOHBLACKROPE_DAMAGE_FIX =
             GameRules.register(
                     "dodosAVJSModISOHBlackropeDamageFix",
                     GameRules.Category.PLAYER,
-                    GameRules.BooleanValue.create(true) // default value
+                    GameRules.BooleanValue.create(true)
             );
     public static void init() {}
 }
