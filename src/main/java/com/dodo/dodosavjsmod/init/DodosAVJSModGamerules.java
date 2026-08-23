@@ -16,5 +16,28 @@ public class DodosAVJSModGamerules {
                     GameRules.Category.PLAYER,
                     GameRules.BooleanValue.create(true)
             );
+
+    public static final GameRules.Key<GameRules.BooleanValue> DAGON_EXT_FIX =
+            GameRules.register(
+                    "dodosAVJSModDagonExtFix",
+                    GameRules.Category.PLAYER,
+                    GameRules.BooleanValue.create(true)
+            );
+
+    public static final GameRules.Key<GameRules.IntegerValue> STUN_DAMAGE_THRESHOLD_1 =
+            GameRules.register("dodosAVJSModStunDamageThreshold1",
+                    GameRules.Category.PLAYER,
+                    GameRules.IntegerValue.create(5));
+
+    public static final GameRules.Key<GameRules.IntegerValue> STUN_DAMAGE_THRESHOLD_2 =
+            GameRules.register("dodosAVJSModstunDamageThreshold2",
+                    GameRules.Category.PLAYER,
+                    GameRules.IntegerValue.create(10));
+
+    public static final GameRules.Key<GameRules.IntegerValue> STUN_DAMAGE_THRESHOLD_3 =
+            GameRules.register("dodosAVJSModstunDamageThreshold3",
+                    GameRules.Category.PLAYER,
+                    GameRules.IntegerValue.create(20));
+
     public static void init() {}
 }

@@ -5,8 +5,10 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "dodosavjsmod.refmap.json",
   "mixins": [
+    "DagonExtensionProcedureMixin",
+    "ExecutionersSwordGuardMixin",
     "ISOHBlackRopeDamageFixMixin",
-    "ExecutionersSwordGuardMixin"
+    "WhenEntityAttacked2ProcedureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
