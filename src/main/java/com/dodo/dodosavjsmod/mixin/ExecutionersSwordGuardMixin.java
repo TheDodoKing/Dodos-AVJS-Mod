@@ -2,7 +2,6 @@ package com.dodo.dodosavjsmod.mixin;
 
 import com.dodo.dodosavjsmod.init.DodosAVJSModGamerules;
 import net.mcreator.jujutsucraft.procedures.EffectAttackProcedure;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,14 +25,6 @@ public class ExecutionersSwordGuardMixin {
         boolean hasEffect = instance.hasEffect(effect);
         int amplifier = hasEffect ? instance.getEffect(effect).getAmplifier() : -1;
 
-        if (!instance.level().isClientSide() && instance.level().getServer() != null) {
-            instance.level().getServer().getPlayerList().broadcastSystemMessage(
-                    Component.literal("[ExecutionerMixin] ruleEnabled=" + ruleEnabled
-                            + " hasEffect=" + hasEffect
-                            + " amplifier=" + amplifier),
-                    false
-            );
-        }
         if (!ruleEnabled) {
             return hasEffect;
         }
