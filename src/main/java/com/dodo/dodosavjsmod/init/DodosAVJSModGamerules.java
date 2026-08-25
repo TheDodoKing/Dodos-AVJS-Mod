@@ -39,5 +39,12 @@ public class DodosAVJSModGamerules {
                     GameRules.Category.PLAYER,
                     GameRules.IntegerValue.create(20));
 
+    public static final GameRules.Key<GameRules.BooleanValue> STOP_TSUKUMO_EXTENSION_EFFECTS_WHILE_UNSTABLE =
+            GameRules.register(
+                    "dodosAVJSModStopTsukumoExtensionEffectsWhileUnstable",
+                    GameRules.Category.PLAYER,
+                    GameRules.BooleanValue.create(true)
+            );
+
     public static void init() {}
 }
