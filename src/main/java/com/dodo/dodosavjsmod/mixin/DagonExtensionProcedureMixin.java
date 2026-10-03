@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = DagonExtensionProcedure.class, remap = false)
 public class DagonExtensionProcedureMixin {
     @Inject(method = "execute", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void dodo$onExecute(LevelAccessor world, Entity entity, CallbackInfo ci) {
+    private static void onExecute(LevelAccessor world, Entity entity, CallbackInfo ci) {
         boolean fixEnabled = world.getLevelData().getGameRules()
                 .getBoolean(DodosAVJSModGamerules.DAGON_EXT_FIX);
 
