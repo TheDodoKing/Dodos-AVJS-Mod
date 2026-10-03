@@ -67,7 +67,7 @@ public class GetoCaptureScheduler {
                 done = p.attemptsLeft <= 0;
                 if (done) {
                     p.owner.displayClientMessage(
-                            Component.literal("The curse is too strong! Try weakening it first."),
+                            Component.literal("The curse is too strong! Try weaking it first."),
                             false);
                 }
             }
