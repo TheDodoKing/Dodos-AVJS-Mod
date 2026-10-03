@@ -67,7 +67,7 @@ public class GetoCaptureScheduler {
                 done = p.attemptsLeft <= 0;
                 if (done) {
                     p.owner.displayClientMessage(
-                            Component.literal("A captured spirit could not be stored properly. Please report this if it keeps happening."),
+                            Component.literal("The curse is too strong! Try weakening it first."),
                             false);
                 }
             }
