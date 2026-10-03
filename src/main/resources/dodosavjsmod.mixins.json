@@ -5,9 +5,15 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "dodosavjsmod.refmap.json",
   "mixins": [
+    "CaptureStorageRedirectMixin",
     "DagonExtensionProcedureMixin",
     "ExecutionersSwordGuardMixin",
+    "GetoCancelTechniqueMixin",
+    "GetoSpawnCurseRandomMixin",
+    "GetoWheelSyncMixin",
     "ISOHBlackRopeDamageFixMixin",
+    "RecallFromStorageMixin",
+    "Test2RetrievalMixin",
     "TsukumoExtensionProcedureMixin",
     "WhenEntityAttacked2ProcedureMixin"
   ],
