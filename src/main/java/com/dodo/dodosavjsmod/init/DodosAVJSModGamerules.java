@@ -46,5 +46,10 @@ public class DodosAVJSModGamerules {
                     GameRules.BooleanValue.create(true)
             );
 
+    public static final GameRules.Key<GameRules.BooleanValue> PROTECT_CORPSES =
+            GameRules.register("dodosAVJSModProtectCorpses",
+                    GameRules.Category.PLAYER,
+                    GameRules.BooleanValue.create(true));
+
     public static void init() {}
 }
