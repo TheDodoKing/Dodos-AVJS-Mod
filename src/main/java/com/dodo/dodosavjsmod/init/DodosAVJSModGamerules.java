@@ -7,7 +7,7 @@ public class DodosAVJSModGamerules {
             GameRules.register(
                     "dodosAVJSModExecutionerGuardFix",
                     GameRules.Category.PLAYER,
-                    GameRules.BooleanValue.create(true)
+                    GameRules.BooleanValue.create(false)
             );
 
     public static final GameRules.Key<GameRules.BooleanValue> ISOHBLACKROPE_DAMAGE_FIX =
@@ -51,5 +51,9 @@ public class DodosAVJSModGamerules {
                     GameRules.Category.PLAYER,
                     GameRules.BooleanValue.create(true));
 
+    public static final GameRules.Key<GameRules.BooleanValue> REMOVE_INFINITY_LAYERS =
+            GameRules.register("dodosAVJSModRemoveInfinityLayers",
+                    GameRules.Category.MISC,
+                    GameRules.BooleanValue.create(false));
     public static void init() {}
 }

@@ -5,7 +5,6 @@ import net.mcreator.jujutsucraft.procedures.GetoSpawnCurseRandomProcedure;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,13 +27,17 @@ public class GetoSpawnCurseRandomMixin {
 
     @Redirect(
             method = "execute",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/LevelAccessor;getEntities(Lnet/minecraft/world/level/entity/EntityTypeTest;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Ljava/util/List;")
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/level/LevelAccessor;m_6443_(Ljava/lang/Class;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Ljava/util/List;",
+                    remap = false
+            )
     )
-    private static List<Entity> redirectScan(LevelAccessor level, EntityTypeTest<Entity, Entity> test, AABB aabb, Predicate<Entity> predicate) {
+    private static List<Entity> redirectScan(LevelAccessor level, Class<Entity> clazz, AABB aabb, Predicate<Entity> predicate) {
         Entity owner = CURRENT_OWNER.get();
         if (level instanceof ServerLevel serverLevel && owner != null) {
             return GetoSpiritCache.getOwnedSpirits(serverLevel, owner.getUUID());
         }
-        return level.getEntities(test, aabb, predicate);
+        return level.getEntitiesOfClass(clazz, aabb, predicate);
     }
 }
